@@ -105,6 +105,85 @@ main{padding:24px 32px;max-width:1100px;margin:0 auto;display:flex;flex-directio
 .legend-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0}
 .legend-line{width:20px;height:2px;border-radius:1px;flex-shrink:0}
 
+
+/* DURATION FILTER BAR */
+.filter-bar{background:rgba(0,0,0,0.15);padding:8px 32px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.filter-label{font-size:11px;color:rgba(255,255,255,0.45);font-weight:500;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap}
+.dpill{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;color:rgba(255,255,255,0.55);font-family:var(--font);font-size:11px;padding:4px 12px;cursor:pointer;transition:all .12s;white-space:nowrap}
+.dpill.on{background:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.5);color:#fff;font-weight:500}
+.dpill-clear{background:none;border:1px solid rgba(255,255,255,0.15);border-radius:20px;color:rgba(255,255,255,0.3);font-family:var(--font);font-size:11px;padding:4px 10px;cursor:pointer;transition:all .12s;white-space:nowrap}
+.dpill-clear:hover{border-color:rgba(255,255,255,0.4);color:rgba(255,255,255,0.7)}
+.filter-bar.disabled .dpill{pointer-events:none;opacity:0.35}
+.filter-bar.disabled .dpill-clear{pointer-events:none;opacity:0.35}
+
+/* RELOCATION DETAIL in dur card */
+.dur-col{display:flex;flex-direction:column;gap:8px}
+.dur-sub-card{background:#faf9f7;border:1px solid var(--border);border-radius:8px;padding:14px 16px}
+.dur-sub-title{font-size:9px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px}
+.dur-bar-row{margin-bottom:10px}
+.dur-bar-row:last-child{margin-bottom:0}
+.dur-bar-label{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+.dur-bar-label .dbl-name{font-size:11px;color:var(--text3);display:flex;align-items:center;gap:6px;font-weight:400}
+.dur-bar-label .dbl-right{display:flex;align-items:baseline;gap:6px}
+.dur-bar-label .dbl-pct{font-size:13px;font-weight:500;color:var(--text2);font-variant-numeric:tabular-nums}
+.dur-bar-label .dbl-count{font-size:11px;color:var(--text3);font-variant-numeric:tabular-nums}
+.dur-bar-track{height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:3px}
+.dur-bar-fill{height:100%;border-radius:3px;transition:width .4s ease}
+.dur-bar-cohort{font-size:10px;color:var(--text3);font-variant-numeric:tabular-nums;opacity:0.75;text-align:right}
+.dur-state-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;display:inline-block}
+.dot-open{background:#c8c4bc}
+.dot-inchange{background:#b8a84a}
+.dot-notinchange{background:#8ab88a}
+/* DURATION OVERVIEW TAB */
+.dur-view{padding:24px 32px;max-width:1100px;margin:0 auto}
+.dur-view h2{font-size:13px;font-weight:600;color:var(--text2)}
+.dur-seg-active{background:var(--surface2)!important;color:var(--text)!important;font-weight:500;border:none;font-family:var(--font)}
+#dur-seg{display:flex;border:1px solid var(--border);border-radius:5px;overflow:hidden;background:var(--surface)}
+.dur-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:28px}
+.dur-card{background:var(--surface);border:2.5px solid #8a8680;border-radius:10px;padding:22px 22px;box-shadow:0 2px 8px rgba(0,0,0,0.1);text-align:center;display:flex;flex-direction:column;align-items:center}
+.dur-card .dc-name{font-size:12px;font-weight:600;color:var(--text2);letter-spacing:.04em;text-transform:uppercase;margin-bottom:12px;text-align:center;display:inline-block;background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:3px 10px}
+.dur-card .dc-n{font-size:13px;font-weight:400;color:var(--text2);font-variant-numeric:tabular-nums;margin-top:4px;text-align:center}
+.dur-card .dc-pct{font-size:34px;font-weight:600;color:var(--text);font-variant-numeric:tabular-nums;line-height:1;text-align:center}
+.dur-card .dc-bar{height:8px;background:var(--border);border-radius:4px;margin:16px 0 14px;overflow:hidden;position:relative}
+.dur-card .dc-bar-fill{height:100%;background:var(--border-strong);border-radius:2px}
+.dur-src-rows{width:100%;margin-top:4px}
+.dur-src-row{display:grid;grid-template-columns:1fr 44px 40px;align-items:center;padding:5px 0;border-bottom:1px solid var(--border)}
+.dur-src-row:last-child{border-bottom:none}
+.dur-src-row .dsr-name{font-size:12px;color:var(--text2);flex:1}
+.dur-src-row .dsr-pct{font-size:14px;font-weight:600;color:var(--text);font-variant-numeric:tabular-nums;text-align:right}
+.dur-src-row .dsr-n{font-size:10px;color:var(--text3);text-align:right;font-variant-numeric:tabular-nums}
+
+/* MOM SECTION */
+.mom-section{margin-top:32px}
+.mom-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:12px}
+.mom-title{font-size:13px;font-weight:600;color:var(--text2)}
+.mom-seg{display:flex;border:1px solid var(--border);border-radius:5px;overflow:hidden;background:var(--surface)}
+.mom-seg button{background:none;border:none;color:var(--text3);font-family:var(--font);font-size:12px;padding:5px 16px;cursor:pointer;transition:all .12s}
+.mom-seg button.active{background:var(--accent);color:#fff;font-weight:500}
+.mom-seg button:hover:not(.active){background:var(--surface2);color:var(--text)}
+
+/* PER-DURATION MOM TABLE */
+.mom-dur-block{background:var(--surface);border:1.5px solid var(--border-strong);border-radius:10px;overflow:hidden;margin-bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+.mom-dur-label{background:var(--bg3, #e4e2db);color:var(--text);font-size:12px;font-weight:600;padding:10px 16px;letter-spacing:.01em;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
+.mom-dur-label .mdl-trend{font-size:11px;font-weight:500;color:var(--text2);display:flex;align-items:center;gap:6px}
+
+.mom-table{width:100%;border-collapse:collapse;table-layout:fixed}
+.mom-table .mth{background:var(--surface2);font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;padding:10px 16px;text-align:center;border-bottom:1px solid var(--border)}
+.mom-table .mth:first-child{text-align:left;width:140px}
+.mom-table .mtr-total td{padding:10px 16px;border-bottom:1.5px solid var(--border-strong);background:var(--surface2)}
+.mom-table .mtr-total .mtd-label{font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.06em}
+.mom-table .mtr-total .mtd-val{text-align:center;font-size:14px;font-weight:400;color:var(--text2);font-variant-numeric:tabular-nums}
+.mom-table .mtr-src td{padding:8px 16px;border-bottom:1px solid var(--border)}
+.mom-table .mtr-src:last-child td{border-bottom:none}
+.mom-table .mtr-src.is-reloc td{border-bottom:1px solid var(--border)}
+.mom-table .mtd-src-label{font-size:11px;color:var(--text3);font-weight:400}
+.mom-table .mtr-src.is-reloc .mtd-src-label{font-weight:600;color:var(--accent);font-size:12px}
+.mom-table .mtd-src-cell{text-align:center;vertical-align:middle}
+.mtd-pct{font-size:13px;font-weight:400;color:var(--text3);font-variant-numeric:tabular-nums;display:block}
+.mtr-src.is-reloc .mtd-pct{font-size:15px;font-weight:700;color:var(--accent)}
+.mtd-n{font-size:10px;color:var(--text3);font-variant-numeric:tabular-nums;display:block;margin-top:2px;opacity:.7}
+.mtd-arrow{font-size:12px;font-weight:700;margin-left:3px}
+.arrow-up{color:#1a7a4a}.arrow-dn{color:#b83030}.arrow-eq{color:var(--text3)}
 footer{padding:12px 32px;border-top:1px solid var(--border);max-width:1100px;margin:0 auto;width:100%}
 footer span{font-size:11px;color:var(--text3)}
 </style>
@@ -117,18 +196,24 @@ footer span{font-size:11px;color:var(--text3)}
       <p id="hdr-sub">loading…</p>
     </div>
     <div class="controls" id="flow-controls" style="display:none">
+      <div class="range-pill" id="range-pill">–</div>
       <div class="seg" id="seg">
         <button onclick="setPeriod('day')">Day</button>
         <button onclick="setPeriod('week')" class="active">Week</button>
         <button onclick="setPeriod('month')">Month</button>
       </div>
       <select id="date-sel"></select>
-      <div class="range-pill" id="range-pill">–</div>
     </div>
   </div>
   <div class="tab-bar">
     <button class="tab-btn" onclick="showTab('flow')">Flow</button>
     <button class="tab-btn active" onclick="showTab('trend')">Trend over time</button>
+    <button class="tab-btn" onclick="showTab('dur')">Contract duration period</button>
+  </div>
+  <div class="filter-bar" id="filter-bar">
+    <span class="filter-label">Minimum contract duration</span>
+    <div id="dur-pills"></div>
+    <button class="dpill-clear" onclick="clearDurFilter()">Select all</button>
   </div>
 </header>
 
@@ -157,14 +242,99 @@ footer span{font-size:11px;color:var(--text3)}
   </div>
 </div>
 
+<div class="view" id="tab-dur">
+  <div class="dur-view">
+    
+    <div class="dur-grid" id="dur-grid"></div>
+    <div class="mom-section">
+      <div class="mom-header">
+        <span class="mom-title" id="mom-title">Week-over-Week · last 4 weeks — minimum contract duration</span>
+        <div class="mom-seg" id="mom-seg">
+          <button onclick="setMomPeriod('month')">Months</button>
+          <button class="active" onclick="setMomPeriod('week')">Weeks</button>
+        </div>
+      </div>
+      <div id="mom-grid"></div>
+    </div>
+  </div>
+</div>
+
 <footer><span id="footer-range"></span></footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"></script>
 <script>
-const GAS_URL = 'https://script.google.com/macros/s/AKfycbzp3qTjtFanfuG2DKce1LnU37LHlgLCvvO7QlD33WzJIhOkzJekTaEvYJrYan9mFzWJiw/exec';
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbyFu5GDGZN3K7aZev-zJDevI27sHk_Xsc5r4u_pbNy3XkSnSVaTnHI2Za_td1k3AGTveg/exec';
 const RAW = [];
 const LPT_ORDER=['MaLoIdent','Cancellation','Registration'];
+const DUR_ORDER=['1 Month','6 Months','12 Months','24 Months','Others'];
+let durPeriod='week', durGroups={}, durCurrentKey='';
+
+function buildDurGroups(){
+  durGroups={};
+  RAW.forEach(r=>{
+    if(!r[0])return;
+    const k=durPeriod==='day'?r[0]:durPeriod==='week'?isoWeek(r[0]):r[0].slice(0,7);
+    if(!durGroups[k])durGroups[k]=[];
+    durGroups[k].push(r);
+  });
+}
+function buildDurSel(){
+  const keys=Object.keys(durGroups).sort().reverse();
+  const sel=document.getElementById('dur-date-sel');
+  if(!sel)return;
+  sel.innerHTML=keys.map(k=>`<option value="${k}">${k}</option>`).join('');
+  durCurrentKey=keys[0]||'';
+  sel.value=durCurrentKey;
+  sel.onchange=()=>{durCurrentKey=sel.value;renderDurTab()};
+}
+function setDurPeriod(p){
+  durPeriod=p;
+  document.querySelectorAll('#dur-seg button').forEach((b,i)=>{
+    const on=['day','week','month'][i]===p;
+    b.className=on?'dur-seg-active':'';
+    if(!on){b.style.color='var(--text2)';b.style.background='none';b.style.border='none';b.style.fontFamily='var(--font)';b.style.fontSize='12px';}
+  });
+  buildDurGroups();buildDurSel();renderDurTab();
+}
+let selectedDurations=new Set(); // empty = all selected
+
+function allDurations(){return[...new Set(RAW.map(r=>r[6]||''))].filter(Boolean).sort((a,b)=>DUR_ORDER.indexOf(a)-DUR_ORDER.indexOf(b))}
+
+function filteredRows(rows){
+  if(!selectedDurations.size)return rows;
+  return rows.filter(r=>selectedDurations.has(r[6]||''));
+}
+
+function buildDurPills(){
+  const all=allDurations();
+  document.getElementById('dur-pills').innerHTML=all.map(d=>{
+    const on=!selectedDurations.size||selectedDurations.has(d);
+    return`<button class="dpill${on?' on':''}" onclick="toggleDur('${d}')">${d}</button>`;
+  }).join('');
+}
+
+function toggleDur(d){
+  // radio: clicking active single selection → go back to all; otherwise select only this
+  if(selectedDurations.size===1&&selectedDurations.has(d)){
+    selectedDurations.clear(); // deselect → all
+  } else {
+    selectedDurations.clear();
+    selectedDurations.add(d);
+  }
+  buildDurPills();
+  render();
+  if(chartsBuilt){chartsBuilt=false;['month','week','day'].forEach(g=>{const cv=document.getElementById('chart-'+g);if(cv){const ch=Chart.getChart(cv);if(ch)ch.destroy();}});buildTrendCharts();chartsBuilt=true;}
+  renderDurTab();
+}
+
+function clearDurFilter(){
+  selectedDurations.clear();
+  buildDurPills();
+  render();
+  if(chartsBuilt){chartsBuilt=false;['month','week','day'].forEach(g=>{const cv=document.getElementById('chart-'+g);if(cv){const ch=Chart.getChart(cv);if(ch)ch.destroy();}});buildTrendCharts();chartsBuilt=true;}
+  renderDurTab();
+}
 let period='week',groups={},currentKey='';
 let chartsBuilt=false;
 
@@ -173,17 +343,16 @@ function srcColor(s){return SRC_COLORS[s]||'#999'}
 
 function isoWeek(d){const dt=new Date(d+'T00:00:00');dt.setDate(dt.getDate()+3-(dt.getDay()+6)%7);const w1=new Date(dt.getFullYear(),0,4);return dt.getFullYear()+'-W'+String(1+Math.round(((dt-w1)/86400000-3+(w1.getDay()+6)%7)/7)).padStart(2,'0')}
 function lastCompleteWeek(){const now=new Date();const d=new Date(now);d.setDate(d.getDate()-((d.getDay()+6)%7+7));return isoWeek(d.toISOString().slice(0,10))}
-function buildGroups(){groups={};RAW.forEach(r=>{const k=period==='day'?r[0]:period==='week'?isoWeek(r[0]):r[0].slice(0,7);if(!groups[k])groups[k]=[];groups[k].push(r)})}
+function buildGroups(){groups={};RAW.forEach(r=>{if(!r[0])return;const k=period==='day'?r[0]:period==='week'?isoWeek(r[0]):r[0].slice(0,7);if(!groups[k])groups[k]=[];groups[k].push(r)})}
 function buildSel(){
   const keys=Object.keys(groups).sort().reverse();
   const sel=document.getElementById('date-sel');
   sel.innerHTML=keys.map(k=>`<option value="${k}">${k}</option>`).join('');
-  const lw=lastCompleteWeek();
-  currentKey=keys.includes(lw)?lw:keys[0]||'';
+  currentKey=keys[0]||'';
   sel.value=currentKey;
-  sel.onchange=()=>{currentKey=sel.value;render()};
+  sel.onchange=()=>{currentKey=sel.value;render();renderDurTab();renderMom()};
 }
-function setPeriod(p){period=p;document.querySelectorAll('#seg button').forEach((b,i)=>b.classList.toggle('active',['day','week','month'][i]===p));buildGroups();buildSel();render()}
+function setPeriod(p){period=p;document.querySelectorAll('#seg button').forEach((b,i)=>b.classList.toggle('active',['day','week','month'][i]===p));buildGroups();buildSel();render();renderDurTab();renderMom();}
 function p(n,t){return t?Math.round(n/t*100):0}
 function countBy(arr,idx){const m={};arr.forEach(r=>{const v=r[idx]||'(empty)';m[v]=(m[v]||0)+1});return Object.entries(m).sort((a,b)=>b[1]-a[1])}
 function getWeekRange(k){const[y,w]=k.split('-W').map(Number);const jan4=new Date(y,0,4);const ms=jan4.getTime()-((jan4.getDay()+6)%7)*86400000+(w-1)*7*86400000;const s=new Date(ms),e=new Date(ms+6*86400000);const fmt=d=>d.toLocaleDateString('en-GB',{day:'2-digit',month:'short'});return`${fmt(s)} – ${fmt(e)}`}
@@ -192,9 +361,11 @@ function showTab(tab){
   document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById('tab-'+tab).classList.add('active');
-  document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',['flow','trend'][i]===tab));
-  document.getElementById('flow-controls').style.display=tab==='flow'?'flex':'none';
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',['flow','trend','dur'][i]===tab));
+  document.getElementById('flow-controls').style.display=(tab==='flow'||tab==='dur')?'flex':'none';
+  document.getElementById('filter-bar').style.display=tab==='dur'?'none':'flex';
   if(tab==='trend'&&!chartsBuilt){buildTrendCharts();chartsBuilt=true}
+  if(tab==='dur'){renderDurTab();renderMom();}
 }
 
 // ── FLOW ──────────────────────────────────────────────────────────────────
@@ -210,9 +381,9 @@ function lptTreeHtml(rows){
 }
 
 // showOfRel controls whether "% of Relocation Service" line appears
-function panelHtml(title,pctOfParent,n,pctOfRel,showOfRel,bodyHtml,barPct){
+function panelHtml(title,pctOfParent,n,pctOfRel,pctOfTotal,showOfRel,bodyHtml,barPct){
   const subLine=showOfRel
-    ?`<div class="ph-of-rel">${pctOfRel}% of Relocation Service</div>`
+    ?`<div class="ph-of-rel">${pctOfRel}% of Relocation Service &nbsp;·&nbsp; ${pctOfTotal}% of total</div>`
     :`<div class="ph-spacer"></div>`;
   return`<div class="panel">
     <div class="panel-hdr">
@@ -225,7 +396,7 @@ function panelHtml(title,pctOfParent,n,pctOfRel,showOfRel,bodyHtml,barPct){
 }
 
 function render(){
-  const rows=groups[currentKey]||[];
+  const rows=filteredRows(groups[currentKey]||[]);
   const total=rows.length;
   const relRows=rows.filter(r=>r[1]==='RelocationService');
   const relN=relRows.length;
@@ -243,7 +414,14 @@ function render(){
   const dates=rows.map(r=>r[0]).sort();
   document.getElementById('footer-range').textContent=dates.length?`${dates[0]} → ${dates[dates.length-1]}`:'';
 
-  const srcCardsHtml=countBy(rows,1).map(([name,n])=>{const pp=p(n,total);const isFocus=name==='RelocationService';return`<div class="src-card${isFocus?' is-focus':''}"><div class="sc-name">${name}</div><div class="sc-pct">${pp}%</div><div class="sc-n">${n.toLocaleString()} cases</div><div class="sc-bar"><div class="sc-bar-fill" style="width:${pp}%"></div></div></div>`}).join('');
+  // sort: RelocationService always centre, others sorted by count around it
+  const srcRaw=countBy(rows,1);
+  const relEntry=srcRaw.find(([name])=>name==='RelocationService')||['RelocationService',0];
+  const others=srcRaw.filter(([name])=>name!=='RelocationService');
+  const leftSrcs=others.slice(0,Math.floor(others.length/2));
+  const rightSrcs=others.slice(Math.floor(others.length/2));
+  const orderedSrcs=[...leftSrcs,relEntry,...rightSrcs];
+  const srcCardsHtml=orderedSrcs.map(([name,n])=>{const pp=p(n,total);const isFocus=name==='RelocationService';return`<div class="src-card${isFocus?' is-focus':''}"><div class="sc-name">${name}</div><div class="sc-pct">${pp}%</div><div class="sc-n">${n.toLocaleString()} cases</div><div class="sc-bar"><div class="sc-bar-fill" style="width:${pp}%"></div></div></div>`}).join('');
   const openItems=countBy(openRows,2).map(([v,n])=>itemHtml(v,n,openN)).join('')||'<div class="empty">–</div>';
   const cpItems=countBy(cpRows,2).map(([v,n])=>itemHtml(v,n,cpN)).join('')||'<div class="empty">–</div>';
   const dsItems=countBy(notInchangeRows,3).map(([v,n])=>dsItemHtml(v,n,notN)).join('')||'<div class="empty">–</div>';
@@ -252,6 +430,10 @@ function render(){
     <div class="section">
       <div class="section-label">Level 1 · Cancellation source</div>
       <div class="root-box"><div class="root-title">Cancellation · Relocation</div><div class="root-n">${total.toLocaleString()}</div><div class="root-sub">100% · ${currentKey}</div></div>
+      <div style="text-align:center;margin-bottom:14px">
+        <span style="font-size:11px;font-weight:500;color:var(--text3);text-transform:uppercase;letter-spacing:.08em">Total cases</span><span style="font-size:11px;font-weight:500;color:var(--text3);margin-left:8px">· 100%</span>
+        <div style="font-size:32px;font-weight:600;color:var(--text);font-variant-numeric:tabular-nums;line-height:1.1;margin-top:2px">${total.toLocaleString()}</div>
+      </div>
       <div class="src-row">${srcCardsHtml}</div>
     </div>
     <div class="arrow-from-reloc">
@@ -263,8 +445,8 @@ function render(){
     <div class="section">
       <div class="section-label">Level 2 · New CP started with</div>
       <div class="two-col">
-        ${panelHtml('Open',p(openN,relN),openN,p(openN,relN),true,openItems,p(openN,relN))}
-        ${panelHtml('CP Started',p(cpN,relN),cpN,0,false,cpItems,p(cpN,relN))}
+        ${panelHtml('Open',p(openN,relN),openN,p(openN,relN),p(openN,total),true,openItems,p(openN,relN))}
+        ${panelHtml('CP Started',p(cpN,relN),cpN,0,0,false,cpItems,p(cpN,relN))}
       </div>
     </div>
     <div style="position:relative;width:100%;height:52px;flex-shrink:0">
@@ -278,8 +460,8 @@ function render(){
     <div class="section">
       <div class="section-label">Level 3 · Delivery state</div>
       <div class="two-col">
-        ${panelHtml('Not InChange',p(notN,cpN),notN,p(notN,relN),true,dsItems,p(notN,cpN))}
-        ${panelHtml('InChange',p(inN,cpN),inN,p(inN,relN),true,lptTreeHtml(inchangeRows),p(inN,cpN))}
+        ${panelHtml('Not InChange',p(notN,cpN),notN,p(notN,relN),p(notN,total),true,dsItems,p(notN,cpN))}
+        ${panelHtml('InChange',p(inN,cpN),inN,p(inN,relN),p(inN,total),true,lptTreeHtml(inchangeRows),p(inN,cpN))}
       </div>
     </div>`;
 }
@@ -294,25 +476,28 @@ function buildTrendCharts(){
 function buildChart(gran){
   const allGroups={};
   RAW.forEach(r=>{
+    if(!r[0])return;
     const k=gran==='day'?r[0]:gran==='week'?isoWeek(r[0]):r[0].slice(0,7);
     if(!allGroups[k])allGroups[k]=[];
     allGroups[k].push(r);
   });
+  Object.keys(allGroups).forEach(k=>allGroups[k]=filteredRows(allGroups[k]));
   const keys=Object.keys(allGroups).sort().slice(-7);
-  // all sources, sorted by total desc
+  // all sources from date-filtered data only
   const srcCount={};
-  RAW.forEach(r=>{srcCount[r[1]]=(srcCount[r[1]]||0)+1});
+  Object.values(allGroups).forEach(arr=>arr.forEach(r=>{srcCount[r[1]]=(srcCount[r[1]]||0)+1}));
   const sources=Object.keys(srcCount).sort((a,b)=>srcCount[b]-srcCount[a]);
 
-  // raw counts per source per period
+  // raw counts per source per period — filter out sources with 0 across all keys
   const rawCounts={};
   sources.forEach(s=>rawCounts[s]=keys.map(k=>(allGroups[k]||[]).filter(r=>r[1]===s).length));
+  const activeSources=sources.filter(s=>rawCounts[s].some(n=>n>0));
   const totals=keys.map(k=>(allGroups[k]||[]).length);
   const maxTotal=Math.max(...totals);
 
   // percentage data for stacked 100%
   const pctData={};
-  sources.forEach(s=>pctData[s]=keys.map((k,i)=>totals[i]?Math.round(rawCounts[s][i]/totals[i]*100):0));
+  activeSources.forEach(s=>pctData[s]=keys.map((k,i)=>totals[i]?Math.round(rawCounts[s][i]/totals[i]*100):0));
 
   // labels
   const labels=keys.map(k=>{
@@ -328,7 +513,7 @@ function buildChart(gran){
   });
 
   // bar datasets
-  const barDatasets=sources.map(src=>({
+  const barDatasets=activeSources.map(src=>({
     type:'bar',
     label:src,
     data:pctData[src],
@@ -415,39 +600,172 @@ function buildChart(gran){
   // legend
   const legendEl=document.getElementById('legend-'+gran);
   legendEl.innerHTML=
-    sources.map(s=>`<div class="legend-item"><div class="legend-dot" style="background:${srcColor(s)}"></div>${s}</div>`).join('')+
+    activeSources.map(s=>`<div class="legend-item"><div class="legend-dot" style="background:${srcColor(s)}"></div>${s}</div>`).join('')+
     `<div class="legend-item"><div class="legend-line" style="background:rgba(180,170,160,0.7);border-top:1px dashed rgba(180,170,160,0.7)"></div>Total relocation cancellation</div>`;
 }
 
-// Show loading state
+function renderDurTab(){
+  const allRows=groups[currentKey]||[];  // always all durations, no filter
+  const total=allRows.length;
+  const durations=DUR_ORDER.filter(d=>allRows.some(r=>(r[6]||'')==d));
+  const sources=[...new Set(allRows.map(r=>r[1]))].filter(Boolean).sort((a,b)=>allRows.filter(x=>x[1]===b).length-allRows.filter(x=>x[1]===a).length);
+  const maxN=Math.max(...durations.map(d=>allRows.filter(r=>(r[6]||'')==d).length));
+
+
+
+  const durTotal=allRows.length;
+  document.getElementById('dur-grid').innerHTML=`<div style="grid-column:1/-1;text-align:center;padding:4px 0 16px"><span style="font-size:11px;font-weight:500;color:var(--text3);text-transform:uppercase;letter-spacing:.08em">Total cases</span><div style="font-size:28px;font-weight:600;color:var(--text);margin-top:4px;font-variant-numeric:tabular-nums">${durTotal.toLocaleString()}</div></span></div>`+durations.map(dur=>{
+    const durRows=allRows.filter(r=>(r[6]||'')==dur);
+    const n=durRows.length;
+    const pp=p(n,total);
+    const srcRows=sources.map(src=>{
+      const sn=durRows.filter(r=>r[1]===src).length;
+      return`<div class="dur-src-row">
+        <div class="dsr-name">${src}</div>
+        <div class="dsr-pct">${p(sn,n)}%</div>
+        <div class="dsr-n">${sn.toLocaleString()}</div>
+      </div>`;
+    }).join('');
+    // sub-card: Relocation Open / InChange / Not InChange
+    const relRows=durRows.filter(r=>r[1]==='RelocationService');
+    const relN=relRows.length;
+    const states=[
+      {label:'Open',n:relRows.filter(r=>!r[3]).length,dot:'dot-open',color:'#c8c4bc'},
+      {label:'InChange',n:relRows.filter(r=>r[3]==='InChange').length,dot:'dot-inchange',color:'#E8E1A5'},
+      {label:'Not InChange',n:relRows.filter(r=>r[3]&&r[3]!=='InChange').length,dot:'dot-notinchange',color:'#C5DEC5'},
+    ];
+    const stateRows=states.map(({label,n:sn,dot,color})=>{
+      const pRel=p(sn,relN);
+      const pTotal=p(sn,n);
+      return`<div class="dur-bar-row">
+        <div class="dur-bar-label">
+          <span class="dbl-name"><span class="dur-state-dot ${dot}"></span>${label}</span>
+          <span class="dbl-right"><span class="dbl-pct">${pRel}%</span><span class="dbl-count">${sn.toLocaleString()}</span></span>
+        </div>
+        <div class="dur-bar-track"><div class="dur-bar-fill" style="width:${pRel}%;background:${color}"></div></div>
+        <div class="dur-bar-cohort">${pTotal}% of total</div>
+      </div>`;
+    }).join('');
+    return`<div class="dur-col">
+      <div class="dur-card">
+        <div class="dc-name">${dur}</div>
+        <div class="dc-pct">${pp}%</div>
+        <div class="dc-n">${n.toLocaleString()} cases</div>
+        <div class="dc-bar"><div class="dc-bar-fill" style="width:${pp}%"></div></div>
+        <div class="dur-src-rows">${srcRows}</div>
+      </div>
+      <div class="dur-sub-card">
+        <div class="dur-sub-title">Delivery State · % of relocation service</div>
+        ${stateRows}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── MONTH-OVER-MONTH ─────────────────────────────────────────────────────────
+let momPeriod='week';
+
+function setMomPeriod(p){
+  momPeriod=p;
+  document.querySelectorAll('#mom-seg button').forEach((b,i)=>b.classList.toggle('active',['month','week'][i]===p));
+  renderMom();
+}
+
+function renderMom(){
+  // group all (date-filtered) RAW by momPeriod
+  const titleEl=document.getElementById('mom-title');
+  if(titleEl)titleEl.textContent=momPeriod==='month'?'Month-over-Month · last 4 months — minimum contract duration':'Week-over-Week · last 4 weeks — minimum contract duration';
+  const gAll={};
+  RAW.forEach(r=>{
+    if(!r[0])return;
+    const k=momPeriod==='week'?isoWeek(r[0]):r[0].slice(0,7);
+    if(!gAll[k])gAll[k]=[];
+    gAll[k].push(r);
+  });
+  const keys=Object.keys(gAll).sort().slice(-4);
+  if(!keys.length){document.getElementById('mom-grid').innerHTML='<div class="empty">No data</div>';return;}
+
+  // source order: reloc first, then others by total count desc
+  const srcTotals={};
+  RAW.forEach(r=>{if(r[0])srcTotals[r[1]]=(srcTotals[r[1]]||0)+1});
+  delete srcTotals[''];
+  const allSrcs=Object.keys(srcTotals).sort((a,b)=>srcTotals[b]-srcTotals[a]);
+  // only sources that appear in these 3 periods
+  const activeSrc=allSrcs.filter(s=>keys.some(k=>(gAll[k]||[]).some(r=>r[1]===s)));
+
+  // period label
+  const pLabel=k=>{
+    if(momPeriod==='week')return k.replace(/\d{4}-/,'');
+    const[y,m]=k.split('-');
+    return new Date(y,m-1,1).toLocaleDateString('en-GB',{month:'short',year:'2-digit'});
+  };
+
+  const arrow=(a,b)=>{
+    if(!b||b===0)return'';
+    const diff=a-b;
+    if(diff>1)return'<span class="mtd-arrow arrow-up">↑</span>';
+    if(diff<-1)return'<span class="mtd-arrow arrow-dn">↓</span>';
+    return'<span class="mtd-arrow arrow-eq">→</span>';
+  };
+
+  const html=DUR_ORDER.filter(dur=>RAW.some(r=>r[0]&&(r[6]||'')==dur)).map(dur=>{
+    // total row
+    const totals=keys.map(k=>(gAll[k]||[]).filter(r=>(r[6]||'')==dur).length);
+    const totalCells=totals.map(n=>`<td class="mtd-val">${n.toLocaleString()}</td>`).join('');
+
+    // reloc % for trend in header
+    const relPcts=keys.map((k,i)=>{const t=totals[i];return t?Math.round((gAll[k]||[]).filter(r=>(r[6]||'')==dur&&r[1]==='RelocationService').length/t*100):0;});
+    const trendArr=relPcts.length>=2?arrow(relPcts[relPcts.length-1],relPcts[relPcts.length-2]):'';
+    const trendLabel=relPcts.length>=2?`Relocation ${relPcts[relPcts.length-2]}% → ${relPcts[relPcts.length-1]}% ${trendArr}`:'';
+
+    // source rows
+    const srcRowsHtml=activeSrc.map(src=>{
+      const isReloc=src==='RelocationService';
+      const cells=keys.map((k,i)=>{
+        const t=totals[i];
+        const n=(gAll[k]||[]).filter(r=>(r[6]||'')==dur&&r[1]===src).length;
+        const pp=t?Math.round(n/t*100):0;
+        // trend arrow only for reloc, last col
+        const arr=(isReloc&&i===keys.length-1&&keys.length>=2)?arrow(pp,keys.length>=2?Math.round((gAll[keys[keys.length-2]]||[]).filter(r=>(r[6]||'')==dur&&r[1]===src).length/(totals[keys.length-2]||1)*100):pp):'';
+        return`<td class="mtd-src-cell"><span class="mtd-pct">${pp}%${arr}</span><span class="mtd-n">${n.toLocaleString()}</span></td>`;
+      }).join('');
+      return`<tr class="mtr-src${isReloc?' is-reloc':''}"><td class="mtd-src-label">${src}</td>${cells}</tr>`;
+    }).join('');
+
+    // header row
+    const headerCols=keys.map(k=>`<th class="mth">${pLabel(k)}</th>`).join('');
+
+    return`<div class="mom-dur-block">
+      <div class="mom-dur-label">
+        <span>${dur}</span>
+        <span class="mdl-trend">${trendLabel}</span>
+      </div>
+      <table class="mom-table">
+        <thead><tr><th class="mth"></th>${headerCols}</tr></thead>
+        <tbody>
+          <tr class="mtr-total"><td class="mtd-label">Total cases</td>${totalCells}</tr>
+          ${srcRowsHtml}
+        </tbody>
+      </table>
+    </div>`;
+  }).join('');
+
+  document.getElementById('mom-grid').innerHTML=html;
+}
+
 document.getElementById('hdr-sub').textContent = 'Loading data…';
 
-fetch(GAS_URL, {redirect: 'follow'})
-  .then(r => {
-    if (!r.ok) throw new Error('HTTP ' + r.status);
-    return r.json();
-  })
+fetch(GAS_URL, {redirect:'follow'})
+  .then(r => { if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
   .then(data => {
     RAW.push(...data);
-    buildGroups();
-    buildSel();
-    render();
-    buildTrendCharts();
-    chartsBuilt = true;
+    buildGroups();buildSel();render();
+    buildDurPills();buildDurGroups();buildDurSel();
+    renderDurTab();renderMom();
+    setTimeout(()=>{buildTrendCharts();chartsBuilt=true;},50);
   })
   .catch(err => {
-    document.getElementById('hdr-sub').textContent = 'Failed to load — see instructions below';
-    document.getElementById('main-flow').innerHTML = `
-      <div style="padding:32px;background:#fff;border:1.5px solid #d4d0c8;border-radius:10px;margin:24px 0;max-width:600px">
-        <div style="font-size:13px;font-weight:600;color:#1c1b18;margin-bottom:12px">Could not load data</div>
-        <div style="font-size:12px;color:#6b6860;line-height:1.8;">
-          1. Open Apps Script → Deploy → Manage deployments<br>
-          2. Edit → set <strong>Who has access</strong> to <strong>Anyone</strong><br>
-          3. Click Deploy → copy the new URL<br>
-          4. Update <code>GAS_URL</code> in this HTML file<br>
-        </div>
-        <div style="font-size:11px;color:#a8a49c;margin-top:12px">Error: ${err.message}</div>
-      </div>`;
+    document.getElementById('hdr-sub').textContent = 'Failed to load data';
     console.error(err);
   });
 </script>
